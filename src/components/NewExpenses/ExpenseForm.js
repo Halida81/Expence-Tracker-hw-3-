@@ -6,41 +6,41 @@ const ExpenseForm = (props)=>{
 
 
     //Version-SLICE
-    const [title, setTitle] = useState('');
-    const [amount, setAmount] = useState('');
-    const [date, setDate] = useState('');
+    // const [title, setTitle] = useState('');
+    // const [amount, setAmount] = useState('');
+    // const [date, setDate] = useState('');
 
 //Version-obj
-    // const [userInput, setUserInput] = useState({
-    //     title:'',
-    //     amount:'',
-    //     date:'',
-    // });
+    const [userInput, setUserInput] = useState({
+        title:'',
+        amount:'',
+        date:'',
+    });
 
     const titleChangeHandler = (event) =>{
-        // setUserInput({
-        //     ...userInput,
-        //     title:event.target.value
+        setUserInput({
+            ...userInput,
+            title:event.target.value
            
-        // });
+        });
         
-        setTitle(event.target.value)
+        // setTitle(event.target.value)
     }
 
     const amountChangeHandler = (event) =>{
-        // setUserInput({
-        //     ...userInput,
-        //     amount:event.target.value
-        // });
-        setAmount(event.target.value)
+        setUserInput({
+            ...userInput,
+            amount:event.target.value
+        });
+        // setAmount(event.target.value)
     }
 
     const dateChangeHandler = (event) =>{
-        // setUserInput({
-        //     ...userInput,
-        //     date:event.target.value
-        // });
-        setDate(event.target.value)
+        setUserInput({
+            ...userInput,
+            date:event.target.value
+        });
+        // setDate(event.target.value)
     }
 
 
@@ -57,14 +57,14 @@ const ExpenseForm = (props)=>{
 
     const submitHandler = (event) =>{
         event.preventDefault();
-        console.log(event);
-        let dataNew = {
-            title: title,
-            amount: amount,
-            date: new Date(date),
-        };
+        console.log(userInput);
+        // let dataNew = {
+        //     title: title,
+        //     amount: amount,
+        //     date: new Date(date),
+        // };
         // console.log(dataNew);
-        props.onSave(dataNew);
+        // props.onSave(dataNew);
         
 
         
@@ -75,21 +75,21 @@ const ExpenseForm = (props)=>{
               <label>Title</label>
               <input name='title' type="text" 
               onChange={titleChangeHandler}
-            value={title}
+            // value={title}
               ></input>
            </div>
            <div className='new-expense__control'>
               <label>Amount</label>
               <input name='amount' type="number" min='0.1' step='1' 
               onChange={amountChangeHandler} 
-            value={amount}
+            // value={amount}
               ></input>
            </div>
            <div className='new-expense__control'>
               <label>Date</label>
               <input name='date' type="date" min='2022-01-01' 
               onChange={dateChangeHandler}
-            value={date}
+            // value={date}
               ></input>
                </div>
 
