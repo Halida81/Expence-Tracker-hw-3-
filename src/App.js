@@ -3,8 +3,9 @@ import { useState } from 'react';
 import './App.css';
 import Expenses from './components/Expenses/Expenses'
 import NewExpenses from './components/NewExpenses/NewExpense';
+import Card from './components/UI/Card'
 
-  const INIT_STATE = [
+  const INIT_STATE = [ // App.js компонента которое собирает все компоненты. INIT_STATE - как бы данные из бекенда они не меняются
   {
     id: 1,
     title: 'Apple',
@@ -15,37 +16,32 @@ import NewExpenses from './components/NewExpenses/NewExpense';
     id: 1,
     title: 'Banana',
     amount: 1,
-    date: new Date( 2022, 4, '02'),
+    date: new Date( 2023, 4, '02'),
   },
-  {
-    id: 1,
-    title: 'Strawberry',
-    amount: 1.5,
-    date: new Date( 2022, 6, 24),
-  },
-  {
-    id: 1,
-    title: 'Cherries',
-    amount: 4.5,
-    date: new Date( 2022, 11, 16),
-  },
+  
 ]
-function App() {
+function App() {                                             //App.js компонента которое собирает все компоненты
 
-  const [expenses, setExpenses] = useState(INIT_STATE);
+  const [expenses, setExpenses] = useState(INIT_STATE); // INIT_STATEтин ичиндеги данныйга жаны данный кошуу учун ага состояние кошобуз
+  // анын баштапкы абалы бул - INIT_STATE. setExpensesке озгоргон абал сакталат ал озгоргон данныйды  expenses ке откоруп берет
 
-  const newExpenseAddHandler = (expense) =>{
-    console.log(expense);
-    console.log('in');
-
-    setExpenses(PrevExpense =>{
-      return[expense, ...PrevExpense];
+  const newExpenseAddHandler = (expense) =>{ //бул жерде подЪем состояние болуп жатат. newExpenseAddHandler - жаны экпенс кошуу учун обработчик
+    console.log(expense)// add болгон жаны данный expense ге тушот
+      setExpenses(PrevState =>{
+        console.log(PrevState)// INIT_STATE-ичиндеги данный PrevState-ке тушот т.е. эски данныйлар
+      return[expense, ...PrevState]; //expense-жаны add болгон данный мн PrevState-эски данныйларды newExpenseAddHandler-чогултуп берет
+     
     })
+    
   }
+  
   return (
     <div className="App">
-      <NewExpenses onSaveAdd={newExpenseAddHandler} />
-      <Expenses items = {expenses}/>
+      <Card>   
+      <NewExpenses onSaveAdd={newExpenseAddHandler} /> 
+     
+     <Expenses items = {expenses}/>
+      </Card>
       
     </div>
   );

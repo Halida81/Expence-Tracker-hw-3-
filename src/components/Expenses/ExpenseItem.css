@@ -1,9 +1,11 @@
 .expense-item { 
     display: flex;
+    justify-content: center;
        align-items: center;  
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);  
        padding: 0.5rem;  
        margin: 1rem 0;  
+       margin-left: 270px;
        border-radius: 12px;  
        background-color: #3f4b48;
        width: 50rem;
