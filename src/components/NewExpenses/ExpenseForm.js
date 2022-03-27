@@ -24,16 +24,13 @@ const ExpenseForm = (props)=>{
     }
 
     const submitHandler = (event) =>{
-        event.preventDefault();
-        // console.log(userInput);
-        let dataNew = {
+        event.preventDefault();// келген e жок болуп кетппешин камсыз кылат
+        let dataNew = { //submitHandler-ге келген данный dataNew-да сакталат
             title,
             amount,
             date: new Date(date),
         };
-
-        // console.log(title);
-        props.onSave(dataNew);
+        props.onSave(dataNew);//подъем сост. тушкон данныйды родительский компонетага беребиз
 
         
 
@@ -66,6 +63,8 @@ const ExpenseForm = (props)=>{
        </div>
        <div className='new-expense__actions'>
            <button type='submit'> Add expense </button>
+           <button type=''>Cansel</button>
+
            </div>
     </form>
 }

@@ -38,9 +38,11 @@ function App() {                                             //App.js компо
   return (
     <div className="App">
       <Card>   
+        {/* {Card-компонент обертка} */}
       <NewExpenses onSaveAdd={newExpenseAddHandler} /> 
-     
+     {/* {подъем состояние  onSaveAdd-ивент  newExpenseAddHandler-жаны келген данныйдын обработчиги} */}
      <Expenses items = {expenses}/>
+     {/* {Expenses-данныйларды топтоп берет items(props) expenses-озгоргон состояние ушул жерде сакталат } */}
       </Card>
       
     </div>

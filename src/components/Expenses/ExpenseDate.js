@@ -1,10 +1,10 @@
 import './ExpenseDate.css'
 
-function ExpenseDate (props){
+function ExpenseDate (props){ //дата учун компонента
 
-    const month = props.date.toLocaleString('en-Us', {month:'long'}  );
-    const day = props.date.toLocaleString('en-Us', {day:'2-digit'});
-    const year = props.date.toLocaleString();
+    const month = props.date.toLocaleString('en-Us', {month:'long'}  ); //props аркылуу келген датанын айын алабыз
+    const day = props.date.toLocaleString('en-Us', {day:'2-digit'}); //props аркылуу келген датанын кунун алабыз
+    const year = props.date.toLocaleString();                        //props аркылуу келген датанын жылын алабыз
 
     return (
          <div className='expense-date'>

@@ -2,9 +2,8 @@ import './NewExpense.css'
 import ExpenseForm from './ExpenseForm'
 
 
-const NewExpenses = (props) =>{
+const NewExpenses = (props) =>{ //dataNew-ушул жерге тушот
     const saveExpenseHandler = (data) =>{
-    
     let dataNew = {
         ...data,
         id: Math.random().toString()

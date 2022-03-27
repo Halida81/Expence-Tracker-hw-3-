@@ -1,8 +1,9 @@
 import './ExpensesFilter.css'
-const ExpensesFilter = (props)=>{
-    const selectChangeHandler = (e) =>{
+
+const ExpensesFilter = (props)=>{//тандалган жыл тушот
+    const selectChangeHandler = (e) =>{ //e-алат жылды чыгарып берет
         props.onChangeFilter(e.target.value)
-        // console.log(e.target.value);
+        console.log(e.target.value);
     }
     return <div className='expenses-filter'>
         <div className='expenses-filter__control'>
